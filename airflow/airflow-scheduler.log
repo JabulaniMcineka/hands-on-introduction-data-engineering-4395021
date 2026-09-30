@@ -1,0 +1,134 @@
+2026-09-17 00:55:07,252 INFO - Starting the scheduler
+2026-09-17 00:55:07,254 INFO - Processing each file at most -1 times
+2026-09-17 00:55:07,266 INFO - Launched DagFileProcessorManager with pid: 21767
+2026-09-17 00:55:07,271 INFO - Resetting orphaned tasks for active dag runs
+2026-09-17 00:55:07,278 INFO - Configured default timezone Timezone('UTC')
+2026-09-17 00:55:23,805 WARNING - The Authorization header is missing: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Host: localhost:8793
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cache-Control: max-age=0
+Referer: https://github.com/
+X-Request-Id: 4c9a69fde70b749ef359fd8f1b8ac06c
+X-Real-Ip: 197.184.118.243
+X-Forwarded-Port: 443
+X-Forwarded-Scheme: https
+X-Original-Uri: /
+X-Scheme: https
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Dest: document
+Sec-Ch-Ua: "Google Chrome";v="153", "Not_A Brand";v="8", "Chromium";v="153"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "macOS"
+Priority: u=0, i
+X-Forwarded-Proto: https
+X-Forwarded-Host: fantastic-succotash-jj79wv6754vrc5g5r-8793.app.github.dev
+X-Forwarded-For: 197.184.118.243
+Proxy-Connection: Keep-Alive
+
+.
+2026-09-17 00:55:23,808 WARNING - Unknown error
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/utils/serve_logs.py", line 61, in validate_pre_signed_url
+    abort(403)
+  File "/home/vscode/.local/lib/python3.10/site-packages/flask/helpers.py", line 310, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/home/vscode/.local/lib/python3.10/site-packages/werkzeug/exceptions.py", line 864, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.Forbidden: 403 Forbidden: You don't have the permission to access the requested resource. It is either read-protected or not readable by the server.
+2026-09-17 00:55:24,149 WARNING - The Authorization header is missing: Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Host: localhost:8793
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Referer: https://fantastic-succotash-jj79wv6754vrc5g5r-8793.app.github.dev/
+X-Request-Id: 646fafb0a2549bddf15e98e2833c7c34
+X-Real-Ip: 197.184.118.243
+X-Forwarded-Port: 443
+X-Forwarded-Scheme: https
+X-Original-Uri: /favicon.ico
+X-Scheme: https
+Sec-Ch-Ua-Platform: "macOS"
+Sec-Ch-Ua: "Google Chrome";v="153", "Not_A Brand";v="8", "Chromium";v="153"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Priority: u=1, i
+X-Forwarded-Proto: https
+X-Forwarded-Host: fantastic-succotash-jj79wv6754vrc5g5r-8793.app.github.dev
+X-Forwarded-For: 197.184.118.243
+Proxy-Connection: Keep-Alive
+
+.
+2026-09-17 00:55:24,149 WARNING - Unknown error
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/utils/serve_logs.py", line 61, in validate_pre_signed_url
+    abort(403)
+  File "/home/vscode/.local/lib/python3.10/site-packages/flask/helpers.py", line 310, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "/home/vscode/.local/lib/python3.10/site-packages/werkzeug/exceptions.py", line 864, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.Forbidden: 403 Forbidden: You don't have the permission to access the requested resource. It is either read-protected or not readable by the server.
+2026-09-17 01:00:07,426 INFO - Resetting orphaned tasks for active dag runs
+2026-09-17 01:05:07,563 INFO - Resetting orphaned tasks for active dag runs
+2026-09-17 01:10:07,726 INFO - Resetting orphaned tasks for active dag runs
+2026-09-17 01:15:07,903 INFO - Resetting orphaned tasks for active dag runs
+2026-09-17 01:20:07,969 INFO - Resetting orphaned tasks for active dag runs
+2026-09-17 01:24:38,519 ERROR - Exception when executing SchedulerJob._run_scheduler_loop
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: dag_run
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 835, in _execute
+    self._run_scheduler_loop()
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 969, in _run_scheduler_loop
+    num_queued_tis = self._do_scheduling(session)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 1045, in _do_scheduling
+    self._start_queued_dagruns(session)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 1310, in _start_queued_dagruns
+    DagRun.active_runs_of_dags((dr.dag_id for dr in dag_runs), only_running=True, session=session),
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 73, in wrapper
+    return func(*args, **kwargs)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/models/dagrun.py", line 305, in active_runs_of_dags
+    return {dag_id: count for dag_id, count in query.all()}
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2773, in all
+    return self._iter().all()
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2916, in _iter
+    result = self.session.execute(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: dag_run
+[SQL: SELECT dag_run.dag_id AS dag_run_dag_id, count(?) AS count_1 
+FROM dag_run 
+WHERE dag_run.dag_id IN (SELECT 1 FROM (SELECT 1) WHERE 1!=1) AND dag_run.state = ? GROUP BY dag_run.dag_id]
+[parameters: ('*', <TaskInstanceState.RUNNING: 'running'>)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2026-09-17 01:24:39,558 INFO - Sending Signals.SIGTERM to group 21767. PIDs of all processes in the group: [21767]
+2026-09-17 01:24:39,558 INFO - Sending the signal Signals.SIGTERM to group 21767
+2026-09-17 01:24:39,976 INFO - Process psutil.Process(pid=21767, status='terminated', exitcode=0, started='00:55:07') (21767) terminated with exit code 0
+2026-09-17 01:24:39,977 INFO - Exited execute loop

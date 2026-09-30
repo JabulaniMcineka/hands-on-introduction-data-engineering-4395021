@@ -1,0 +1,28 @@
+[2026-09-17T06:54:55.574+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: extract_dag.extract_task manual__2026-09-17T06:54:52.008150+00:00 [queued]>
+[2026-09-17T06:54:55.579+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: extract_dag.extract_task manual__2026-09-17T06:54:52.008150+00:00 [queued]>
+[2026-09-17T06:54:55.579+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2026-09-17T06:54:55.591+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): extract_task> on 2026-09-17 06:54:52.008150+00:00
+[2026-09-17T06:54:55.594+0000] {standard_task_runner.py:57} INFO - Started process 22702 to run task
+[2026-09-17T06:54:55.597+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'extract_dag', 'extract_task', 'manual__2026-09-17T06:54:52.008150+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/extract_dag.py', '--cfg-path', '/tmp/tmplx2_1hgz']
+[2026-09-17T06:54:55.598+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask extract_task
+[2026-09-17T06:54:55.625+0000] {task_command.py:410} INFO - Running <TaskInstance: extract_dag.extract_task manual__2026-09-17T06:54:52.008150+00:00 [running]> on host codespaces-b096b2
+[2026-09-17T06:54:55.681+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='extract_dag' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T06:54:52.008150+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-17T06:54:52.008150+00:00'
+[2026-09-17T06:54:55.682+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-09-17T06:54:55.682+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'wget -c https://lnkd.in/gfENQi7K -O /workspaces/hands-on-introduction-data-engineering-4395021/lab/orchestrated/airflow-extract-data.csv']
+[2026-09-17T06:54:55.691+0000] {subprocess.py:86} INFO - Output:
+[2026-09-17T06:54:55.731+0000] {subprocess.py:93} INFO - --2026-09-17 06:54:55--  https://lnkd.in/gfENQi7K
+[2026-09-17T06:54:55.767+0000] {subprocess.py:93} INFO - Resolving lnkd.in (lnkd.in)... 130.211.32.14, 2600:1901:0:d5ad::
+[2026-09-17T06:54:55.771+0000] {subprocess.py:93} INFO - Connecting to lnkd.in (lnkd.in)|130.211.32.14|:443... connected.
+[2026-09-17T06:54:56.250+0000] {subprocess.py:93} INFO - HTTP request sent, awaiting response... 200 OK
+[2026-09-17T06:54:56.250+0000] {subprocess.py:93} INFO - Cookie coming from lnkd.in attempted to set domain to linkedin.com
+[2026-09-17T06:54:56.250+0000] {subprocess.py:93} INFO - Length: 5357 (5.2K) [text/html]
+[2026-09-17T06:54:56.250+0000] {subprocess.py:93} INFO - Saving to: ‘/workspaces/hands-on-introduction-data-engineering-4395021/lab/orchestrated/airflow-extract-data.csv’
+[2026-09-17T06:54:56.250+0000] {subprocess.py:93} INFO - 
+[2026-09-17T06:54:56.250+0000] {subprocess.py:93} INFO -      0K .....                                                 100% 36.1M=0s
+[2026-09-17T06:54:56.250+0000] {subprocess.py:93} INFO - 
+[2026-09-17T06:54:56.250+0000] {subprocess.py:93} INFO - 2026-09-17 06:54:56 (36.1 MB/s) - ‘/workspaces/hands-on-introduction-data-engineering-4395021/lab/orchestrated/airflow-extract-data.csv’ saved [5357/5357]
+[2026-09-17T06:54:56.251+0000] {subprocess.py:93} INFO - 
+[2026-09-17T06:54:56.251+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-09-17T06:54:56.268+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=extract_dag, task_id=extract_task, execution_date=20260917T065452, start_date=20260917T065455, end_date=20260917T065456
+[2026-09-17T06:54:56.291+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2026-09-17T06:54:56.301+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

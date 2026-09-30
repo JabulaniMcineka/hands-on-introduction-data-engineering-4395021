@@ -1,0 +1,73 @@
+[2026-09-17 00:55:07 +0000] [21757] [INFO] Starting gunicorn 20.1.0
+[2026-09-17 00:55:07 +0000] [21757] [INFO] Listening at: http://[::]:8793 (21757)
+[2026-09-17 00:55:07 +0000] [21757] [INFO] Using worker: sync
+[2026-09-17 00:55:07 +0000] [21764] [INFO] Booting worker with pid: 21764
+[2026-09-17 00:55:07 +0000] [21765] [INFO] Booting worker with pid: 21765
+Traceback (most recent call last):
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: dag_run
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vscode/.local/bin/airflow", line 6, in <module>
+    sys.exit(main())
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/__main__.py", line 48, in main
+    args.func(args)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 52, in command
+    return func(*args, **kwargs)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 112, in wrapper
+    return f(*args, **kwargs)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 72, in scheduler
+    _run_scheduler_job(job_runner, skip_serve_logs=args.skip_serve_logs)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/cli/commands/scheduler_command.py", line 42, in _run_scheduler_job
+    run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 281, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/job.py", line 310, in execute_job
+    ret = execute_callable()
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 835, in _execute
+    self._run_scheduler_loop()
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 969, in _run_scheduler_loop
+    num_queued_tis = self._do_scheduling(session)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 1045, in _do_scheduling
+    self._start_queued_dagruns(session)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/jobs/scheduler_job_runner.py", line 1310, in _start_queued_dagruns
+    DagRun.active_runs_of_dags((dr.dag_id for dr in dag_runs), only_running=True, session=session),
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 73, in wrapper
+    return func(*args, **kwargs)
+  File "/home/vscode/.local/lib/python3.10/site-packages/airflow/models/dagrun.py", line 305, in active_runs_of_dags
+    return {dag_id: count for dag_id, count in query.all()}
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2773, in all
+    return self._iter().all()
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 2916, in _iter
+    result = self.session.execute(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/vscode/.local/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: dag_run
+[SQL: SELECT dag_run.dag_id AS dag_run_dag_id, count(?) AS count_1 
+FROM dag_run 
+WHERE dag_run.dag_id IN (SELECT 1 FROM (SELECT 1) WHERE 1!=1) AND dag_run.state = ? GROUP BY dag_run.dag_id]
+[parameters: ('*', <TaskInstanceState.RUNNING: 'running'>)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
